@@ -1,0 +1,27 @@
+﻿
+<select ng-model="orderProp">
+	<option value="high">High</option>
+	<option value="low">Low</option>
+</select>
+
+<table >
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><b>High</b></td>
+		<td><b>Low</b></td>
+	</tr>
+	<tr ng-repeat="fc in forecast | orderBy:orderProp">
+		<td><a href="#/city/{{fc['cityName']}}">{{ fc['cityName'] }}</a></td>
+		<td><img ng-src="http://l.yimg.com/a/i/us/we/52/{{fc['code']}}.gif">	</td>
+		<td>{{fc['text']}}</td>
+		<td>{{getTemp(fc['high'], temp.val)}}</td>
+		<td>{{getTemp(fc['low'], temp.val)}}</td>
+		
+	</tr>
+
+
+</table>
+<br/>

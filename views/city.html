@@ -1,0 +1,30 @@
+
+<h1 ng-bind="city"></h1>
+
+
+<!-- <div ng-repeat="fc in fullforecast | filter:city ">
+{{fc}}
+</div> -->
+<table >
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><b>Low</b></td>
+		<td><b>High</b></td>
+
+	</tr>
+	<tr ng-repeat="fc in fullforecast | filter:city">
+		<td>{{fc['date']}}</td>
+		<td><img ng-src="http://l.yimg.com/a/i/us/we/52/{{fc['code']}}.gif"></td>
+		<td>{{ fc['text'] }}	</td>
+<!-- 		<td>{{ fc['low'] }}	</td>
+		<td>{{ fc['high'] }}	</td> -->
+		<td>{{getTemp(fc['high'], temp.val)}}</td>
+		<td>{{getTemp(fc['low'], temp.val)}}</td>
+		
+	</tr>
+
+
+</table>
