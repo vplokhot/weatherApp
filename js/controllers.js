@@ -11,14 +11,14 @@ var weatherControllers = (function () {
           val : 'fahrenheit'
         };
 
-	    // Define the forecast data.					  
+      // Define the forecast data.            
         weatherService.getWeather($scope);
-        // weatherService.formatWeather($scope);	
+        // weatherService.formatWeather($scope);  
     }]);
     // Inject the scope and new weatherService reference into the controller.
     weatherControllers.controller('ListCtrl', ['$scope', 'weatherService',
                                   function ($scope, weatherService) {
-                                      // Call another controller.				  
+                                      // Call another controller.         
                                       weatherService.doSomething($scope);
                                   }]);
     // Inject the scope and new weatherService reference into the controller.
@@ -27,9 +27,9 @@ var weatherControllers = (function () {
 
                                     $scope.getTemp = function(val, temp){
                                       if(temp == 'fahrenheit'){
-                                        return val* 9 / 5 + 32;
+                                        return Math.round(val* 9 / 5 + 32);
                                       }else{
-                                        return (val - 32) * 5/9;
+                                        return Math.round((val - 32) * 5/9);
                                       }
                                     };
 
@@ -42,9 +42,9 @@ var weatherControllers = (function () {
 
                                     $scope.getTemp = function(val, temp){
                                       if(temp == 'fahrenheit'){
-                                        return val* 9 / 5 + 32;
+                                        return Math.round(val* 9 / 5 + 32);
                                       }else{
-                                        return (val - 32) * 5/9;
+                                        return Math.round((val - 32) * 5/9);
                                       }
                                     };
                                   }]);
